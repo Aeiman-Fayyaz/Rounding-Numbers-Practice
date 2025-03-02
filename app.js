@@ -34,105 +34,57 @@ document.write("<h4>Today's Time:</h4>" + "<br/>" + days[week] + " " + months[mo
 console.log(timeToday);*/
 
 
-// Age Calculator
-
-// let userName = prompt("Enter your Name")
-
-// let todayDate = new Date().getFullYear()
-
-// let userAge = prompt("Enter your birthday")
-
-// // User Age
-// let userBirthdayYear = new Date(userAge).getFullYear()
-
-// let age = (todayDate - userBirthdayYear);
-
-// // Getting MilliSeconds from birthday to today
-// let todayMs = new Date()
-
-// let todayMilliSec = todayMs.getTime()
-
-// let userDaysPassMilliSec = new Date(userAge).getTime()
-
-// // Difference
-// let difference = (todayMilliSec - userDaysPassMilliSec);
-
-// // // Days Pass
-// // let currentMilliSec = Math.round( difference / (1000 * 60 * 60 *24))
-
-// // Getting Seconds From brithday to today
-// let todaySeconds = Math.round(difference / (1000 * 60))
-
-// // Getting Minutes From brithday to today 
-// let todayMinutes = Math.round(difference / (1000 * 60 * 60))
-
-// // Getting Hours From Birthday to today
-// let todayHours = Math.round(difference / (1000 * 60 * 60 * 24))
-
-// // Getting weeks from Birthday to Today
-// let weekToday = Math.round(difference / (1000 * 60 * 60 * 24 * 7))
-
-// // Getting days from Birthday to Today
-// let yearsToday = Math.round(difference / (1000 * 60 * 60 * 24 * 365))
-
-
-// document.write("<h1>Age Calculator</h1>" + "<h4>Name:</h4>" + userName + "<br/>" + "<h4>Your Birthday:</h4>" + 
-// userAge +  "<h4>Current Year:</h4>" + todayDate + "<h4>Your Age:</h4>" + age + "<h4>Today MilliSeconds:</h4>" + todayMilliSec + "<br/>" + 
-// "<h4>MilliSeconds Pass from Your Birthday to Today:</h4>" + "<br/>" + userDaysPassMilliSec + "<h4>Seconds Pass from your Brithday to Today:</h4>" + todaySeconds +
-// + "<h4>Minutes Pass from Your Birthday to Today:</h4>" + todayMinutes + "<h4>Hours Pass from Birthday to Today:</h4>" + todayHours + 
-// "<h4>Week Pass from Your Birthday to Today:</h4>" + weekToday + "<br/>" + "<h4>Years Pass from Birthday to Today:</h4>" + yearsToday)
-// // "<h4>Days Pass:</h4>" + currentMilliSec
 
 
 
 
 
-
-
-
-// New Code
+// NEW CODE 
 // Age Calculator 
 
-let userName = prompt("Enter your name")
+// User Data
 
-let userBirthday = prompt("Enter your birthday (like that: 01 january 0000)")
+let userName = prompt("Enter your good name")
+let birthday = prompt("Enter your birthdate \nLike that (00 january 0000)")
 
-// Get current year
-let currentTime = new Date().getFullYear()
+// Today time
+let todayTime = new Date()
+let todayMilliSec = new Date(todayTime).getTime()
 
-// Get year from user birthday
-let userBirthYear = new Date(userBirthday).getFullYear()
+// Getting user birthday time
+let birthdate = new Date(birthday)
 
-// Subrtract current year from user birth year to .getFullYear() Method
-let differenceThenNow = currentTime - userBirthYear
+// Getting milliseconds from user birthday
+let userBirthMilliSec = new Date(birthdate).getTime()
 
-// Current MilliSeconds 
-let passMilliSec = new Date().getTime() 
+// Getting difference subtract the valure of todaymillisec from userbirthmillisec 
+let difference = todayMilliSec - userBirthMilliSec
 
-// Use MilliSeconds Pass from birth to today
-let userPassMilliSec = new Date(userBirthday).getTime()
+// Getting age  
+let userYear = new Date(birthday).getFullYear()
+let currentYear =  new Date().getFullYear()
+let age = currentYear - userYear
 
-// Getting difference subtract from today's millisecods to user birthdate milliseconds
-let getDifference = passMilliSec - userPassMilliSec
+// Getting MilliSeconds
+let milliSecPassed = Math.round(difference / (1000))
 
-// Gettig Seconds
-// let secondsPass = Math.round(getDifference / (1000))
+// Getting Seconds
+let secondsPassed = Math.round(difference / (1000 * 60))
 
 // Getting Minutes
-let minutesPass = Math.round(getDifference / (1000 * 60))
+let minutesPassed = Math.round(difference / (1000 * 60 * 60))
 
 // Getting Hours
-let hoursPass = Math.round(getDifference / (1000 * 60 * 60 * 24 ))
+let hoursPassed = Math.round(difference / (1000 * 60 * 60 * 24))
 
-// Getting Weeks
-let weekPass = Math.round(getDifference /  (1000 * 60 * 60 * 24 * 7))
+// Getting Weeks 
+let weekPassed = Math.round(difference / (1000 * 60 * 60 * 24 * 7))
 
-// Getting days
-let daysPassed = Math.round(getDifference / (1000 * 60 * 60 * 24 * 365))
-// console.log(daysPassed);
+// Getting Days
+let yearsPassed = Math.round(difference / (1000 * 60 * 60 * 24 * 365))
 
-// Print on Document
-document.write("<h2>Age Calculator</h2>" + "<br/>" + "<h4>Your Name:</h4>" + "<br/>" + userName + "<br/>" + "<h4>Your Birthday:</h4>" + "<br/>"
-+ userBirthday + "<br/>" + "<h4>Current Year:</h4>" + "<br/>" + currentTime + "<br/>" + "<h4>MilliSeconds Passed:</h4>" + "<br/>" + getDifference
-+ "<br/>" + "<h4>Minutes Pass:</h4>" + "<br/>" + minutesPass + "<br/>" +
-"<h4>Hours Passed:</h4>" + "<br/>" + hoursPass + "<br/>" + "<h4>Weeks Passed:</h4>" + weekPass + "<br/>" + "<h4>Days Passed:</h4>" + "<br/>" + daysPassed) 
+document.write("<h1>Age Calculator:</h1>" + "<br/>" + "<h4>Username:</h4>" + "<br/>" + userName + "<br/>" + "<h4>Birthdate:</h4>" + "<br/>"
++ birthday + "<br/>" + "<h4>Age:</h4>" + "<br/>" + age + "<br/>" + "<h4>MilliSeconds Passeed:</h4>" + "<br/>" + milliSecPassed + "<br/>"
++ "<h4>Seconds Passed:</h4>" + "<br/>" + secondsPassed + "<br/>" + "<h4>Minutes Passed:</h4>" + minutesPassed + "<br/>" + 
+"<h4>Hours Passed:</h4>" + hoursPassed + "<br/>" + "<h4>Weeks Passed:</h4>" + "<br/>" + weekPassed + "<br/>" + "<h4>Years Passed:</h4>" + 
+"<br/>" + yearsPassed22)
